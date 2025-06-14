@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Father's Day!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(to bottom, #f5e050, #4dc0b5); /* Fallback gradient */
+      background-image: url('promise.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow: auto;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    .header-container {
+      max-width: 600px; /* Reduced from 800px */
+      width: 100%;
+      padding: 3px; /* Reduced from 25px */
+      background: rgba(87, 192, 245, 0.388); /* Light gold */
+      border-radius: 15px; /* Slightly smaller radius */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.091);
+      margin: 5px 0 5px; /* Reduced bottom margin */
+      backdrop-filter: blur(box-shadow);
+      position: relative;
+      z-index: 1;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      margin: 20px 0;
+      backdrop-filter: blur(5px);
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      font-size: 2.5em; /* Reduced from 3.5em */
+      margin: 5px 0; /* Reduced margin */
+      color: #e1e4eb;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+      letter-spacing: 0.5px; /* Reduced for compactness */
+      font-weight: 700;
+      transition: transform 0.3s ease;
+    }
+    h1:hover {
+      transform: scale(1.05);
+    }
+    p {
+      font-size: 1.4em;
+      line-height: 1.9;
+      margin: 20px 0;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      font-family: 'Lora', serif;
+    }
+    .heart {
+      color: #ff4d4d;
+      font-size: 2em;
+      animation: pulse 1.5s ease-in-out infinite;
+      display: inline-block;
+    }
+    button {
+      padding: 15px 40px;
+      font-size: 1.2em;
+      font-weight: bold;
+      background: linear-gradient(45deg, #185dc5,  #185dc5);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+    .hidden {
+      display: none;
+    }
+    .message {
+      margin: 20px 0;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      color: #000; /* Black text */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      font-family: 'Lora', serif;
+      font-size: 1.3em;
+    }
+    .message p {
+      margin: 0;
+      background: none;
+      padding: 0;
+    }
+    /* Animated stars for festive effect */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 80%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .star {
+      position: absolute;
+      background: #ffd700;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+      opacity: 0.7;
+    }
+    .star:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .star:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .star:nth-child(3) { left: 30%; animation-delay: 0s; }
+    .star:nth-child(4) { left: 5%; animation-delay: 3s; }
+    .star:nth-child(5) { left: 50%; animation-delay: 1s; }
+    .star:nth-child(6) { left: 10%; animation-delay: 5s; }
+    .star:nth-child(7) { left: 70%; animation-delay: 1s; }
+    .star:nth-child(8) { left: 20%; animation-delay: 3s; }
+    .star:nth-child(9) { left: 90%; animation-delay: 4s; }
+    .star:nth-child(10) { left: 30%; animation-delay: 6s; }
+    .star:nth-child(11) { left: 35%; animation-delay: 3s; }
+    .star:nth-child(12) { left: 40%; animation-delay: 2s; }
+    .star:nth-child(13) { left: 40%; animation-delay: 4s; }
+    .star:nth-child(14) { left: 40%; animation-delay: 3s; }
+    .star:nth-child(15) { left: 40%; animation-delay: 5s; }
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 1; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 1; }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    @media (max-width: 600px) {
+      .header-container, .container {
+        padding: 10px; /* Further reduced for mobile */
+        margin: 10px;
+      }
+      h1 {
+        font-size: 1.8em; /* Reduced from 2.5em for mobile */
+      }
+      p {
+        font-size: 1.2em;
+      }
+      button {
+        padding: 12px 30px;
+        font-size: 1em;
+      }
+      .message {
+        font-size: 1.1em;
+        padding: 15px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="stars">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+  <div class="header-container">
+    <h1>Happy Father's Day</h1>
+    <h1>TO</h1>
+    <h1>Mr. ACQUAH JOSEPH</h1>
+  </div>
+  <div class="container">
+    <p>Happy Father’s Day, Boss!
+        Wishing you a wonderful day filled with happiness and love. Your leadership, guidance, and strength are truly inspiring — both in the workplace and beyond. May you enjoy this special day with your loved ones. <span class="heart">🎉💌❤️🎊💌</span></p>
+    <button onclick="showMessage()">A Special Message</button>
+    <div id="specialMessage" class="message hidden">
+      <p>Thanks for being so supportive and encouraging throughout my time in school — your guidance has truly meant a lot to me, and I’m deeply grateful.
+        May this day bring you all the appreciation and joy you so richly deserve.</p>
+    </div>
+  </div>
+  <script>
+    function showMessage() {
+      const message = document.getElementById('specialMessage');
+      message.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
